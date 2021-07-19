@@ -1,0 +1,20 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: ShoppingMall
+
+cache:
+  ehcache:
+    heap: 100  #缓存中key的数量
+    offheap: 50 #缓存内存大小 50M
+    ttl: 7200 #缓存过期时间 单位 秒(S) 默认两小时
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.domain.entity
+
+logging:
+  config: classpath:logback-config.xml
+
