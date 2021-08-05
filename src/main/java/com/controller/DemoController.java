@@ -1,5 +1,6 @@
 package com.controller;
 
+import com.annotation.AutoLogin;
 import com.common.BaseException;
 import com.common.R;
 import com.common.ResponseObject;
@@ -29,6 +30,7 @@ public class DemoController {
     private Cache<String, ResponseObject> cache;
 
 
+    @AutoLogin
     @GetMapping(value = "/getUser")
     public R getUser(String str) {
         log.info(str);
@@ -40,6 +42,11 @@ public class DemoController {
         // Page<TbUser> page = tbUserService.page(new UserQuery());
         //return BaseOutput.success(page);
         //tbUserService.update(new TbUser());
+        return null;
+    }
+    @AutoLogin
+    @GetMapping(value = "/test")
+    public R test() {
         return null;
     }
 
