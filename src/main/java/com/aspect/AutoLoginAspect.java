@@ -24,7 +24,7 @@ import java.util.Objects;
 @Component
 public class AutoLoginAspect {
 
-    @Pointcut("execution(* com.controller..*(..))")
+    @Pointcut("@annotation(com.annotation.AutoLogin)")
     public void pointCut(){}
 
     @Before(value = "pointCut()")

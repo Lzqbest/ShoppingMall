@@ -29,7 +29,6 @@ public class DemoController {
     @Resource
     private Cache<String, ResponseObject> cache;
 
-
     @AutoLogin
     @GetMapping(value = "/getUser")
     public R getUser(String str) {
@@ -44,7 +43,6 @@ public class DemoController {
         //tbUserService.update(new TbUser());
         return null;
     }
-    @AutoLogin
     @GetMapping(value = "/test")
     public R test() {
         return null;
