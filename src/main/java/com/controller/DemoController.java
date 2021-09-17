@@ -43,9 +43,15 @@ public class DemoController {
         //tbUserService.update(new TbUser());
         return null;
     }
-    @GetMapping(value = "/test")
-    public R test() {
-        return null;
+
+    @GetMapping("/insert")
+    public R insert() {
+        try {
+            tbUserService.insertUser();
+        } catch (Exception e) {
+            log.error("捕获异常！[{}]", e.getMessage());
+        }
+        return R.success(tbUserService.queryAllUser());
     }
 
     @GetMapping(value = "/getCache")

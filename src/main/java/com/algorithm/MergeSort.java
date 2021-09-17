@@ -15,6 +15,17 @@ public class MergeSort {
         Arrays.stream(arr).forEach(System.out::println);
     }
 
+    /**
+     * TODO 归并排序： 使用递归思想
+     * TODO 1、假定某中间值左 右为有序数组
+     * TODO 2、创建临时数组
+     * TODO 3、从左右两个数组首值开始比较
+     * TODO 4、若 左数组数值小 则左数组数值存入临时数组下标位置  左数组下标+1  临时数组下标+1
+     * TODO 5、若 右数组数值小 则右数组数值存入临时数组下标位置  右数组下标+1  临时数组下标+1
+     * @param arr
+     * @param left
+     * @param right
+     */
     public static void sort(int[] arr, int left, int right) {
         if (left == right) {
             return;

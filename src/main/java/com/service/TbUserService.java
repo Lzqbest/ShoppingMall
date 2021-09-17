@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.domain.entity.TbUser;
 import com.domain.query.UserQuery;
 
+import java.util.List;
+
 /**
  * <p>
  * 用户表 服务类
@@ -38,4 +40,16 @@ public interface TbUserService {
      * @return
      */
     boolean update(TbUser tbUser);
+
+    /**
+     * 查询所有用户
+     * @return
+     */
+    List<TbUser> queryAllUser();
+
+    /**
+     * 添加用户
+     * @return
+     */
+    boolean insertUser();
 }

@@ -18,8 +18,8 @@ public class Check {
             for (int i = 0; i < arr.length; i++) {
                 arr[i] = random.nextInt(20);
             }
-            //插入排序
-            //SelectionSort.sort(arr, 0);
+            //选择排序
+            //SelectionSort.sort(arr);
             //冒泡排序
             //BubbleSort.sort(arr);
             //插入排序

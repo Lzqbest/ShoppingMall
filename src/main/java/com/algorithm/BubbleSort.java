@@ -17,6 +17,13 @@ public class BubbleSort {
         System.out.println(result);
     }
 
+    /**
+     * TODO 冒泡排序
+     * TODO 1、初始化标记(flag=false) 变量
+     * TODO 2、比较数组相邻两个值大小，若无序 则交换  且修改标记(flag=true)
+     * TODO 3、根据标记值 判断此次循环是否存在交换  存在：重复循环   不存在：结束循环
+     * @param arr
+     */
     public static void sort(int[] arr) {
         boolean flag;
         do {

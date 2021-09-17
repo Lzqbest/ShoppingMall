@@ -1,13 +1,12 @@
 package com.algorithm;
 
 import java.util.Arrays;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 /**
  * @author liaozhiqiang1
  * @date 2021/9/6 10:40
- * @Description
+ * @Description 快速排序
  */
 public class QuickSort {
 
@@ -18,6 +17,17 @@ public class QuickSort {
         System.out.println(result);
     }
 
+    /**
+     * TODO 快速排序 使用递归思想
+     * TODO 假定数组最后一个数值为中间值
+     * TODO 分别从数组左右边界开始（左边界递增 右边界递减）
+     * TODO 当左边界中存在大于中间值 右边界存在小于中间值 交换左右边界值
+     * TODO 左右下标相同时跳出循环
+     * TODO 最后将中间值 交换到左下标位置
+     * @param arr
+     * @param leftBound
+     * @param rightBound
+     */
     public static void sort(int[] arr, int leftBound, int rightBound) {
         if (leftBound >= rightBound) {
             return;

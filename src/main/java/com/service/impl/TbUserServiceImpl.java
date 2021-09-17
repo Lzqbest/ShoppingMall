@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * <p>
@@ -29,6 +30,7 @@ public class TbUserServiceImpl implements TbUserService {
     private TbUserMapper tbUserMapper;
 
     @Override
+    @Transactional(rollbackFor = Throwable.class)
     public boolean addUser() {
         TbUser user = new TbUser();
         user.setName("zhangsan");
@@ -38,7 +40,10 @@ public class TbUserServiceImpl implements TbUserService {
         user.setLastLoginTime(now);
         user.setCreateTime(now);
         user.setUpdateTime(now);
-        return tbUserMapper.insert(user) > 0;
+        if (tbUserMapper.insert(user) > 0){
+            throw new BaseException("自定义异常！");
+        }
+        return true;
     }
 
     @Override
@@ -64,9 +69,20 @@ public class TbUserServiceImpl implements TbUserService {
         TbUser t1 = tbUserMapper.selectById(1);
         int i = tbUserMapper.deleteById(t1.getId());
         TbUser t2 = tbUserMapper.selectById(t1.getId());
-        if (i==1){
+        if (i == 1) {
             throw new BaseException("11");
         }
         return true;
+    }
+
+    @Override
+    public List<TbUser> queryAllUser() {
+        LambdaQueryWrapper<TbUser> wrapper = Wrappers.lambdaQuery(TbUser.class);
+        return tbUserMapper.selectList(wrapper);
+    }
+
+    @Override
+    public boolean insertUser() {
+        return addUser();
     }
 }

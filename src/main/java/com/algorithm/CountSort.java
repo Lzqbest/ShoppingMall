@@ -17,6 +17,14 @@ public class CountSort {
         System.out.println(result);
     }
 
+    /**
+     * TODO 计数排序：主要用于数值范围较小，数据量大的情景  例如数值范围【0-99】
+     * TODO 1、创建空数组【temp】 大小为数值范围中个数 【100】
+     * TODO 2、遍历排序数组，
+     * TODO 3、以数组中数值为下标 将空数组【temp】中值累加1
+     * TODO 4、遍历【temp】 将数组中值大于零的下标 按值的个数 依次存入结果集中
+     * @param arr
+     */
     public static void sort(int[] arr) {
         int[] temp = new int[20];
         for (int i = 0; i < arr.length; i++) {

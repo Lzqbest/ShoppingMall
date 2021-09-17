@@ -12,17 +12,22 @@ public class SelectionSort {
 
     public static void main(String[] args) {
         int[] arr = {0, 1, 14, 5, 6, 2, 3, 7, 18, 9, 1, 4, 15, 6, 12, 3};
-        sort(arr, 0);
+        sort(arr);
         String result = Arrays.stream(arr).mapToObj(Integer::toString).collect(Collectors.joining(","));
         System.out.println(result);
     }
 
-    public static void sort(int[] arr, int firstBound) {
-        if (firstBound >= arr.length) {
-            return;
+    /**
+     * TODO 选择排序
+     * TODO 遍历数组
+     * TODO 查找当前数据往后 比当前数据小 且是最小的数据
+     * TODO 交换
+     * @param arr
+     */
+    public static void sort(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            selection(arr, i);
         }
-        selection(arr, firstBound);
-        sort(arr, ++firstBound);
     }
 
     public static void selection(int[] arr, int firstBound) {
