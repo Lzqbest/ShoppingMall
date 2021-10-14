@@ -1,4 +1,4 @@
-package com.algorithm;
+package com.study.algorithm;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

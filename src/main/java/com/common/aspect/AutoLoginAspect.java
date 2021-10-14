@@ -1,4 +1,4 @@
-package com.aspect;
+package com.common.aspect;
 
 import com.common.BaseException;
 import org.aspectj.lang.JoinPoint;
@@ -24,7 +24,7 @@ import java.util.Objects;
 @Component
 public class AutoLoginAspect {
 
-    @Pointcut("@annotation(com.annotation.AutoLogin)")
+    @Pointcut("@annotation(com.common.annotation.AutoLogin)")
     public void pointCut(){}
 
     @Before(value = "pointCut()")

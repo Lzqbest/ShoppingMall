@@ -1,6 +1,6 @@
 package com.controller;
 
-import com.annotation.AutoLogin;
+import com.common.annotation.AutoLogin;
 import com.common.BaseException;
 import com.common.R;
 import com.common.ResponseObject;
